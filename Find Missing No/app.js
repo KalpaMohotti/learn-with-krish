@@ -1,8 +1,9 @@
 
+//const a = [21, 25, 29,22, 24,28,27, 26, 20];          // Last Number Missing 30  
+//const a = [21, 25, 29,22, 24,28,30,27, 26];         // First Number Missing 20
+const a = [21, 25, 29,22, 24,28,30,27, 26, 20];       // Middle Number Missing 23
 
-
-const a = [21, 25, 29,22, 24,28, 27, 26, 30];  // Sequence
-let start = 21;            // Sequence start number        
+let start = 20;            // Sequence start number        
 let end = 30;              // Sequence end number
 
 
@@ -26,8 +27,8 @@ function getMissing_no(arr, start, end) {
         }
         // Return missing number
         if (next_no - first_no == 2) {
-
-            return arr[i] + 1;
+            let missingNo=arr[i]+1;
+            return "Missing No " +missingNo;
         }
 
         //Check last number missing
@@ -39,4 +40,5 @@ function getMissing_no(arr, start, end) {
     }
 
 }
+
 
