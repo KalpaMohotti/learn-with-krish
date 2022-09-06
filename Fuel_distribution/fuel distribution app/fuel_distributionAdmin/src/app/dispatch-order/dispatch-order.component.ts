@@ -74,7 +74,7 @@ loadDetails(){
      
       this.loadDetails();
       Swal.fire("Order dispatched",'','success');
-     
+      this.loadDetails();
     })
   }
 

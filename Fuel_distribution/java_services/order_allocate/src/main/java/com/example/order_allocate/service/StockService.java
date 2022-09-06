@@ -11,5 +11,7 @@ import java.util.Optional;
 public interface StockService {
     Stock save(Stock stock);
    Optional<Stock> get(int id);
+   List<Stock> findAll();
+
 
 }

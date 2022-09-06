@@ -7,6 +7,7 @@ import { Order } from '../Model/order';
 import { OrderDetails } from '../Model/order-details';
 import { ScheduleDetails } from '../Model/schedule-details';
 import { StatusDetails } from '../Model/status-details';
+import{Stock} from '../Model/stock';
 
 @Injectable({
   providedIn: 'root'
@@ -54,6 +55,12 @@ export class DispatchServiceService {
     let url="http://localhost:8080/dispatch";
     
     return this.http.post(url, {gasStationId:fuelStationId,orderId:id,status:'Dispatch'}).pipe(catchError(this.handleError));
+
+  }
+
+  availableStock():Observable<Stock>{
+    let url="http://localhost:8080/stock";
+    return this.http.get<Stock>(url).pipe(catchError(this.handleError));
 
   }
 

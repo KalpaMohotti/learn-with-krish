@@ -11,6 +11,7 @@ import { DispatchServiceService } from './Service/dispatch-service.service';
 import { DispatchedOrdersComponent } from './dispatched-orders/dispatched-orders.component';
 import { HomeComponent } from './home/home.component';
 import { DeliveredOrdersComponent } from './delivered-orders/delivered-orders.component';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 
 
 
@@ -21,7 +22,8 @@ import { DeliveredOrdersComponent } from './delivered-orders/delivered-orders.co
     DispatchOrderComponent,
     DispatchedOrdersComponent,
     HomeComponent,
-    DeliveredOrdersComponent
+    DeliveredOrdersComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,
