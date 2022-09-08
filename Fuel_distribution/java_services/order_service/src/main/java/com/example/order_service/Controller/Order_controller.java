@@ -38,7 +38,7 @@ public class Order_controller {
     @CrossOrigin
     @RequestMapping(value = "/order",method = RequestMethod.POST)
     public Order_fuel save(@RequestBody Order_fuel order){
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         Date date=new Date();
 
         order.setDate(formatter.format(date));

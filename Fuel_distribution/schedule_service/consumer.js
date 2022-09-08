@@ -59,13 +59,7 @@ await consumer.run({
       .connect().catch((e)=> console.error('error on connecting kafka',e));
 
   
-    //   await producer.send({
-    //     topic:'new_order_response',
-    //     messages:[
-    //       //   {key:i.toString(),value:JSON.stringify({empName:'Kalpa '+i})},
-    //        {EventSchedule},
-    //     ],
-    //    });
+   
 
        await producer.send({
         topic: 'schedule-response',

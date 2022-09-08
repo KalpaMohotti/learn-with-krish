@@ -8,6 +8,7 @@ import { ViewAllOrdersComponent } from './view-all-orders/view-all-orders.compon
 import { OrderStatusComponent } from './order-status/order-status.component';
 const routes: Routes = [
   {path:'home',component:HomeComponent},
+  {path:'',component:HomeComponent},
   {path:'gas_station',component:GasStationComponent},
   {path:'create_order/:id',component:CreateOrderComponent},
   {path:'user/:id',component:UserComponent},

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { ScheduleDetails } from '../Model/schedule-details';
 import { StatusDetails } from '../Model/status-details';
@@ -15,24 +16,25 @@ export class DispatchOrderComponent implements OnInit {
 
   data: StatusDetails = { allocation: "", orderId: 0, schedule: "", orderStatusId: 0 }
   scheduleData: ScheduleDetails = { scheduleId: 0, date: "", time: "", orderId: 0 }
-  orderData:any;
-  OrderDetails:any;
-  
+  orderData: any;
+  OrderDetails: any;
 
-  constructor(private dispatch_service:DispatchServiceService) {
+
+  constructor(private router: Router, private dispatch_service: DispatchServiceService) {
     this.loadDetails();
-   }
+  }
 
   ngOnInit(): void {
 
 
   }
-loadDetails(){
-  this.dispatch_service.getAllOrderDetails().subscribe((result)=>{
-    console.log(result);
-    this.OrderDetails=result;
-  })
-}
+  loadDetails() {
+    this.dispatch_service.getAllOrderDetails().subscribe((result) => {
+      
+      this.OrderDetails = result;
+     
+    })
+  }
 
 
 
@@ -55,27 +57,32 @@ loadDetails(){
   viewScheduleDetails() {
     this.dispatch_service.getScheduleData(this.id.value).subscribe((result) => {
       this.scheduleData = result;
-      
+
     })
   }
 
-  viewOrderDetaile(){
-    this.dispatch_service.getOrderDetails(this.id.value).subscribe((result)=>{
-      this.orderData=result;
-      
+  viewOrderDetaile() {
+    this.dispatch_service.getOrderDetails(this.id.value).subscribe((result) => {
+      this.orderData = result;
+
     })
   }
 
-  dispatch(id:number,fuelStationId:string){
-    
-    
-    
-    this.dispatch_service.dispatchOrder(id,fuelStationId).subscribe((result)=>{
-     
+  dispatch(id: number, fuelStationId: string) {
+
+
+
+    this.dispatch_service.dispatchOrder(id, fuelStationId).subscribe((result) => {
+
       this.loadDetails();
-      Swal.fire("Order dispatched",'','success');
-      this.loadDetails();
+      Swal.fire("Order dispatched", '', 'success');
+
     })
+
+   
+ 
   }
+
+ 
 
 }
